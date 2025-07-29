@@ -1,0 +1,8 @@
+CREATE EXTENSION IF NOT EXISTS vector;
+
+CREATE TABLE IF NOT EXISTS items (
+    id SERIAL PRIMARY KEY,
+    embedding VECTOR(384) NOT NULL,
+    page_number INT NOT NULL,
+    content TEXT NOT NULL
+);
