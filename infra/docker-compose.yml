@@ -1,0 +1,11 @@
+services:
+  pgvector:
+    image: pgvector/pgvector:0.8.0-pg17
+    environment:
+      POSTGRES_DB: ai
+      POSTGRES_USER: ai
+      POSTGRES_PASSWORD: "RagAppPasswd"
+    ports:
+      - "35432:5432"
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
